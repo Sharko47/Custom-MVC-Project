@@ -1,0 +1,16 @@
+li{
+  list-style-type: none;
+  background-color: rgb(59, 137, 255);
+  float: left;
+  color: black;
+}
+body{
+
+    background: url(background.png) no-repeat center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+  
+}
