@@ -6,6 +6,5 @@
     <title>Sharkopedia</title>
 </head>
 <body>
-    
 </body>
 </html>

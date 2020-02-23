@@ -1,0 +1,29 @@
+body{
+
+  background: url(background.png) no-repeat center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+  ul{
+    list-style-type: none;
+    background-color: rgb(94, 255, 53);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 15vmin;
+  }
+  li{
+    float: right;
+  }
+  li a{
+    color: black;
+    padding: 16px 18px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+  li a:hover{
+    background-color: red;
+  }
