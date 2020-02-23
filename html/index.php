@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharkopedia</title>
-</head>
-<body>
-</body>
-</html>
+<?php 
+$currentPage = 'index';
+include ('nav_header.php'); 
+?>
+
+<h1>Welcome To Hestabit Technologies</h1>
+
+<?php include ('footer.php'); ?>

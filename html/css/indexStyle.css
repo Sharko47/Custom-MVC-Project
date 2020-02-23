@@ -1,29 +1,109 @@
-body{
-
-  background: url(background.png) no-repeat center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+/* Start of the header and footer Styling*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#logo_name{
+  font-size: large;
+  font-weight: bold;
+}
+  nav{
+    background-color: rgb(14, 14, 14);
+    justify-content: space-between;
+    color: white;
+    display: flex;
+   padding: 20px 5px 20px 10px;
   }
-  ul{
+  nav ul li{
     list-style-type: none;
-    background-color: rgb(94, 255, 53);
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    box-shadow: 15vmin;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+ 
   }
-  li{
-    float: right;
-  }
-  li a{
-    color: black;
-    padding: 16px 18px;
+  nav li a{
+    color: white;
+    padding: 12px 16px;
     text-align: center;
-    display: block;
+    background-color: rgb(21, 142, 255);
     text-decoration: none;
   }
   li a:hover{
     background-color: red;
+    border-radius: 8px;
+    transition: .5s;
+    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.3);
+
   }
+h1{
+  color: black;
+  text-align: center;
+}
+.footer_container{
+  display: flex;
+  background-color: black;
+  bottom: 0;
+  padding: 3px;
+  position: relative;
+}
+footer{
+  text-align: center;
+  flex: 1;
+  color: white;
+  
+}
+.active{
+  background-color: rgb(0, 255, 0);
+  color: black;
+  border-radius: 6px;
+}
+/* End of the header and footer Styling*/
+
+/* Start of the FirstWeek Page Styling*/
+.task_1_container{
+  background-color: rgb(224, 224, 224);
+  max-width: 50%;
+  border-radius: 6px;
+  margin: auto;
+  margin-top: 10px;
+  height: 380px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.task_1_container:hover{
+  box-shadow: 1px 8px 16px 1px rgba(0,0,0,0.3);
+  transition: .3s;
+}
+.task_1_container h2{
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  border-radius: 6px 6px 0 0;
+  background-color: rgb(0, 0, 0);
+}
+.col{
+  display: block;
+  margin: 15px auto;
+}
+.task_1_output_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+#even{
+  line-height: 35px;
+  font-size: 25px;
+  color: rgb(255, 0, 0);
+}
+#odd{
+  color: rgb(0, 255, 0);
+  line-height: 30px;
+  font-size: 18px;
+}
+
+
+/* End of the FirstWeek Page Styling*/
