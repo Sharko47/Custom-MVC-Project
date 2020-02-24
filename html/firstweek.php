@@ -4,9 +4,9 @@ include ('nav_header.php');
 ?>
 <div class="task_1_container">
     <h2>Task No 1</h2>
-        <form method="GET">
-        <input type="text" name="textName" class="col" id="textName" placeholder="Enter array with ','" >
-        <input type="button" name="submit" class="col" id="submit" value="Submit Array">
+        <form action="" method="post">
+        <input type="text" name="name" class="col" id="name" placeholder="Enter array with ','" >
+        <input type="button" name="submit" class="col" id="submit" value="Submit">
         </form>
     
 <h4>Output: </h4>
@@ -75,37 +75,116 @@ include ('nav_header.php');
 <h2>Task No 3</h2>
 <div class="task_1_output_container">
     <?php
-    $num = 6;
+    $num = $_GET['name'];
         echo "&nbsp;<br>";
         echo "Pattern Printing: ";
         echo "&nbsp;<br>&nbsp;<br>";
-        for ($i=0; $i < $num; $i++) { 
+        printPattern($num);
+        printPatternGoogleAnswer($num);
+        function printPattern($num){
+            for ($i=1; $i <= $num; $i++) { 
                 for ($j=$num-$i; $j > 0; $j--) { 
-                   print "&nbsp;";
+                   print "&nbsp;&nbsp;&nbsp;&nbsp;";
                 }
-                for ($k=0; $k <= $i; $k++) { 
+                for ($k=$i; $k <= $i*2-2+1; $k++) { 
                     echo "&nbsp;$k&nbsp;";
                 }
+                for ($m=$k-2; $m >= $i; $m--) { 
+                    echo "&nbsp;$m&nbsp;";
+                }   
                 echo "&nbsp;<br>";
+            }
         }
-    ?>
+        function printPatternGoogleAnswer($num){
+            echo "&nbsp;<br>";
+            echo "Pattern Printing from Google : ";
+            echo "&nbsp;<br>&nbsp;<br>";
+            $counter = 0;
+            $counter2 = 0; 
+            $k = 0;
+            for ($i=1; $i <= $num; $i++) { 
+                    for ($j=1; $j <= $num-$i; $j++) { 
+                    print "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    $counter++;
+                    }
+                    while ($k != 2*$i-1) {
+                        if($counter<=$num-1){
+                            $temp = $i + $k;
+                            echo "&nbsp;$temp&nbsp;";
+                            $counter++;
+                        }
+                        else{
+                            ++$counter2;
+                            $temp = $i+$k-2*$counter2;
+                            echo "&nbsp;$temp&nbsp;";
+                        }
+                        ++$k;
+                    }
+                    $counter = $counter2 = $k = 0;   
+                    echo "&nbsp;<br>";
+            }
+        }
+        
+    ?>  
 </div>
 </div>
 <div class="task_1_container">
 <h2>Task No 4</h2>
 <div class="task_1_output_container">
     <?php
-        $name = "I am in Hestabit now";
+       $name = "I am in Hestabit now";
+       echo "<p style='text-align:center'>Given String : $name</p>";
         $len = countCharacter($name);
         echo "&nbsp;<br>";
         echo "A) Reverse of [$name] is : ";
-        for ($i=$len; $i>=0; $i--) { 
-            echo "$name[$i]";
+        reverseString($name,$len);
+        
+        
+        
+        function reverseString($string, $length){
+            for ($i=$length; $i>=0; $i--) { 
+                echo "$string[$i]";
+            }
         }
+
         echo "<br>&nbsp;<br>";
         echo "B) Find Hestabit from the given string :";
+        findHestabitInSentence($name,$len);
         
         
+
+        function findHestabitInSentence($string,$length){
+            $str = 'Hestabit';
+            $count = 0;
+            $tempCount = 0;
+            
+            for ($i=0; $i < $length; $i++) { 
+                if($str[$count] == $string[$i]){
+                    $count++;
+                    $tempCount = $count;
+                    continue;
+                }else{
+                    $count = 0;
+                }
+            }
+            if($tempCount == countCharacter($str)){
+                echo " Found String";
+            }else{
+                echo " Not found";
+            }
+        }
+
+        echo "<br>&nbsp;<br>";
+        echo "C) Count the frequency of duplicate alphabets :";
+
+        findFrequencyOfDuplicateAlphabet($name,$len);
+
+
+        function  findFrequencyOfDuplicateAlphabet($string,$length){
+            //I am in Hestabit now
+            
+        }
+
 
 
         function countCharacter($string){
