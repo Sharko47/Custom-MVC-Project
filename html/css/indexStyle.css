@@ -45,7 +45,8 @@ h1{
   background-color: black;
   bottom: 0;
   padding: 3px;
-  position: relative;
+  position: fixed;
+  width: 100%;
 }
 footer{
   text-align: center;

@@ -43,6 +43,7 @@ include ('nav_header.php');
     <?php
         $arr1 = [1,2,3,6,3];
         $arr2 = [3,4,5,6];
+        echo "&nbsp;<br>&nbsp;<br>";
         echo "Intersection of two Arrays: ";
         for ($i=0; $i < countArrayElements($arr1); $i++) { 
                 for ($j=0; $j < countArrayElements($arr2); $j++) { 
@@ -51,24 +52,44 @@ include ('nav_header.php');
                     }
                 }
         }
-        echo "<br/>";
+        echo "&nbsp;<br>&nbsp;<br>";
         echo "Union of two Arrays: ";
-        
-        for ($i=0; $i < countArrayElements($arr1); $i++) {
-            $sameAppearanceCounter = 0; 
-            for ($j=0; $j < countArrayElements($arr2); $j++) { 
-                
-                if($arr1[$i] == $arr2[$j] || $sameAppearanceCounter>0){
-                    continue; 
-                }else{
-                    echo "$arr1[$i]";
-                    $sameAppearanceCounter++;
-                }   
-                
+        //12363   3,4,5,6
+        $unionArray = array();
+        $index = 0;
+        for ($i=0; $i < countArrayElements($arr1); $i++) { 
+            $unionArray[$index++] = $arr1[$i];
+        }
+        for ($j=0; $j < countArrayElements($arr2); $j++) { 
+            for ($m=0; $m < countArrayElements($unionArray); $m++) { 
+                if($arr2[$j]==$unionArray[$m]){
+                    break;
+            }else{
+                $unionArray[$index++] = $arr2[$m];
+            } 
             }
-    }
-        
+            
+        }
+        for ($k=0; $k < countArrayElements($unionArray); $k++) { 
+            echo "$unionArray[$k]";
+        }
 
+
+
+
+        echo "&nbsp;<br>&nbsp;<br>";
+        echo "Concatenation of two Arrays: ";
+        $concatenatedArray = array();
+        $index = 0;
+        for ($i=0; $i < countArrayElements($arr1); $i++) { 
+            $concatenatedArray[$index++] = $arr1[$i];
+        }
+        for ($i=0; $i < countArrayElements($arr2); $i++) { 
+            $concatenatedArray[$index++] = $arr2[$i];
+        }
+        for ($j=0; $j < countArrayElements($concatenatedArray); $j++) { 
+            echo "$concatenatedArray[$j] ";
+        }
     ?>
 </div>
 <div class="task_1_container">
@@ -157,36 +178,69 @@ include ('nav_header.php');
             $str = 'Hestabit';
             $count = 0;
             $tempCount = 0;
+            $foundIndex = 0;
             
             for ($i=0; $i < $length; $i++) { 
                 if($str[$count] == $string[$i]){
                     $count++;
                     $tempCount = $count;
+                    if($foundIndex<1){
+                        $foundIndex = $i;
+                    }
                     continue;
                 }else{
                     $count = 0;
                 }
             }
             if($tempCount == countCharacter($str)){
-                echo " Found String";
+                echo " Found String at index : $foundIndex";
             }else{
                 echo " Not found";
             }
         }
 
         echo "<br>&nbsp;<br>";
-        echo "C) Count the frequency of duplicate alphabets :";
+        echo "C) Count the frequency of duplicate alphabets : ";
 
         findFrequencyOfDuplicateAlphabet($name,$len);
 
 
         function  findFrequencyOfDuplicateAlphabet($string,$length){
-            //I am in Hestabit now
+            
+            $count = 0;
+            for ($i=0; $i < $length; $i++) { 
+                for ($j=0; $j < $length; $j++) {
+                        if($string[$i]==$string[$j]){
+                            $count++;
+                        }
+                }
+                if(!($string[$i]==' ')){
+                echo " $string[$i] => $count ";
+                }
+                $count = 0;
+            }
             
         }
+        echo "<br>&nbsp;<br>";
+        echo "D) Now print the given string in this alphabetical order : ";
+        printReverseAlphabeticalOrder($name,$len);
 
-
-
+        function printReverseAlphabeticalOrder($string,$length){
+            //I am in Hestabit now
+            for ($i=0; $i < $length; $i++) {
+               $ch = returnReverseCharacter(ord($string[$i]));
+                echo "$ch";
+            }
+        }
+        function returnReverseCharacter($charNumber){
+            if($charNumber>=65 && $charNumber<=90){
+                $charNumber = 90-($charNumber%65);
+            }
+            else if($charNumber >= 97 && $charNumber<=122){
+                $charNumber = 122-($charNumber%97);
+            }
+            return chr($charNumber);
+        }
         function countCharacter($string){
             $count = 0;
             while ($string!= '') {
