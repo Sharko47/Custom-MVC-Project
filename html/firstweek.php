@@ -4,7 +4,7 @@ include ('nav_header.php');
 ?>
 <div class="task_1_container">
     <h2>Task No 1</h2>
-        <form action="" method="post">
+        <form action="firstweek.php" method="get">
         <input type="text" name="name" class="col" id="name" placeholder="Enter array with ','" >
         <input type="button" name="submit" class="col" id="submit" value="Submit">
         </form>
@@ -41,8 +41,17 @@ include ('nav_header.php');
 <div class="task_1_container">
 <h2>Task No 2</h2>
     <?php
-        $arr1 = [1,2,3,6,3];
-        $arr2 = [3,4,5,6];
+        $arr1 = [2,5,1,3,6,7];
+        $arr2 = [3,2,1,4];
+        echo "&nbsp;<br>";
+        echo "Given two Arrays are : a) ";
+        for ($i=0; $i < countArrayElements($arr1); $i++) { 
+                echo "$arr1[$i]";
+        }
+        echo "&nbsp;&nbsp;b) ";
+        for ($i=0; $i < countArrayElements($arr2); $i++) { 
+            echo "$arr2[$i]";
+        }
         echo "&nbsp;<br>&nbsp;<br>";
         echo "Intersection of two Arrays: ";
         for ($i=0; $i < countArrayElements($arr1); $i++) { 
@@ -52,31 +61,56 @@ include ('nav_header.php');
                     }
                 }
         }
+        echo "&nbsp;<br>";
+        echo "Intersection of two Arrays Using Inbuilt Funtions: ";
+        $intersectArray = array_unique(array_intersect($arr1,$arr2));
+        for ($i=0; $i <= countArrayElements($intersectArray)+1; $i++) { 
+                echo "$intersectArray[$i]";
+        }
+
         echo "&nbsp;<br>&nbsp;<br>";
-        echo "Union of two Arrays: ";
-        //12363   3,4,5,6
-        $unionArray = array();
-        $index = 0;
-        for ($i=0; $i < countArrayElements($arr1); $i++) { 
-            $unionArray[$index++] = $arr1[$i];
-        }
-        for ($j=0; $j < countArrayElements($arr2); $j++) { 
-            for ($m=0; $m < countArrayElements($unionArray); $m++) { 
-                if($arr2[$j]==$unionArray[$m]){
-                    break;
-            }else{
-                $unionArray[$index++] = $arr2[$m];
+        echo "Union of two Arrays : ";
+        $sorterArray1 = $arr1;
+        $sorterArray2 = $arr2;
+        sort($sorterArray1);
+        sort($sorterArray2);
+
+        printUnion($sorterArray1,$sorterArray2,countArrayElements($arr1),countArrayElements($arr2));
+
+        function printUnion($arr1, $arr2, $m, $n){ 
+            $i = 0; $j = 0; 
+            while ($i < $m && $j < $n) 
+            { 
+                if ($arr1[$i] < $arr2[$j]) 
+                    echo($arr1[$i++] . " "); 
+                
+                else if ($arr2[$j] < $arr1[$i]) 
+                    echo($arr2[$j++] . " "); 
+                
+                else
+                { 
+                    echo($arr2[$j++] . " "); 
+                    $i++; 
+                } 
             } 
-            }
             
-        }
-        for ($k=0; $k < countArrayElements($unionArray); $k++) { 
-            echo "$unionArray[$k]";
-        }
+            //Print remaining elements 
+            //of the larger array 
+            while($i < $m) 
+                echo($arr1[$i++] . " "); 
+            
+            while($j < $n) 
+                echo($arr2[$j++] . " "); 
+        } 
 
 
-
-
+        echo "&nbsp;<br>";
+        echo "Union of two Arrays using inbuilt funtions : ";
+        
+        $unionArray = array_unique(array_merge($arr1,$arr2));
+        sort($unionArray);
+        print_r($unionArray);
+    
         echo "&nbsp;<br>&nbsp;<br>";
         echo "Concatenation of two Arrays: ";
         $concatenatedArray = array();
@@ -89,6 +123,12 @@ include ('nav_header.php');
         }
         for ($j=0; $j < countArrayElements($concatenatedArray); $j++) { 
             echo "$concatenatedArray[$j] ";
+        }
+        echo "&nbsp;<br>";
+        echo "Concatenation of two Arrays using inbuilt functions : ";
+        $concatenatedArray = array_merge($arr1,$arr2);
+        for ($i=0; $i < countArrayElements($concatenatedArray); $i++) { 
+                echo $concatenatedArray[$i]." ";
         }
     ?>
 </div>
@@ -154,6 +194,7 @@ include ('nav_header.php');
 <div class="task_1_output_container">
     <?php
        $name = "I am in Hestabit now";
+       echo "<br>&nbsp";
        echo "<p style='text-align:center'>Given String : $name</p>";
         $len = countCharacter($name);
         echo "&nbsp;<br>";

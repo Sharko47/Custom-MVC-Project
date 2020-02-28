@@ -1,44 +1,118 @@
 /* Start of the header and footer Styling*/
+
 *{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-#logo_name{
-  font-size: large;
-  font-weight: bold;
+body{
+  /* background-image: url(bg.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+  background-color: #f1f1f1;
 }
-  nav{
-    background-color: rgb(14, 14, 14);
-    justify-content: space-between;
-    color: white;
-    display: flex;
-   padding: 20px 5px 20px 10px;
+header{
+  position: relative;
+  max-width: 1200px;
+  margin: 18px auto;
+  padding: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgb(0, 0,0,0.3);
+}
+.logo_name{
+  font-size: 18px;
+  color: black;
+  padding: 0 20px;
+  margin-top: 8px;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav{
+  float: right;
+}
+.clear-fix{
+  clear: both;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li{
+  list-style-type: none;
+}
+nav ul li a{
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: #262626;
+
+}
+nav ul li a.active{
+  background: rgb(0, 255, 0);
+  border-radius: 5px;
+}
+
+nav ul li a:hover{
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  transition: .5s;
+}
+@media (max-width: 1200px){
+  header{
+    margin: 20px;
   }
-  nav ul li{
-    list-style-type: none;
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
- 
-  }
-  nav li a{
-    color: white;
-    padding: 12px 16px;
+}
+@media (max-width: 768px){
+  .menu-toggle
+  {
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: right;
+    font-size: 30px;
+    color: #3b3b3b;
     text-align: center;
-    background-color: rgb(21, 142, 255);
-    text-decoration: none;
+    cursor: pointer;
   }
-  li a:hover{
-    background-color: red;
-    border-radius: 8px;
-    transition: .5s;
-    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.3);
+  .menu-toggle.active:before{
+    content: '\f00d';
+  
+  }
+  .menu-toggle:before{
+    content: '\f0c9';
+    font-family: fontAwesome;
+    line-height: 40px;
+  }
+  nav{
+    display: none;
+  }
+  nav.active{
+    display: block;
+    width: 100%;
 
   }
+  nav.active ul{
+    display: block;
+
+  }
+  nav.active ul li a{
+    margin: 0 0 15px;
+  }
+}
 h1{
-  color: black;
+  color: rgb(53, 53, 53);
   text-align: center;
+  font-size: 25px;
 }
 .footer_container{
   display: flex;
@@ -54,26 +128,23 @@ footer{
   color: white;
   
 }
-.active{
-  background-color: rgb(0, 255, 0);
-  color: black;
-  border-radius: 6px;
-}
+
 /* End of the header and footer Styling*/
 
 /* Start of the FirstWeek Page Styling*/
 .task_1_container{
-  background-color: rgb(224, 224, 224);
+  background-color: white;
   max-width: 50%;
   border-radius: 6px;
   margin: auto;
   margin-top: 10px;
-  height: 380px;
+  min-height: 350px;
+  min-width: 250px;
   margin-bottom: 30px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .task_1_container:hover{
-  box-shadow: 1px 8px 16px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 8px 16px 1px rgba(0,0,0,0.45);
   transition: .3s;
   
 }
@@ -83,7 +154,7 @@ footer{
   font-size: 20px;
   color: white;
   border-radius: 6px 6px 0 0;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(240, 0, 0);
 }
 .col{
   display: block;
@@ -109,3 +180,117 @@ footer{
 
 
 /* End of the FirstWeek Page Styling*/
+
+/* Start of the ThirdWeek Page Styling*/
+  .form-container{
+    background-color: white;
+    max-width: 50%;
+    border-radius: 6px;
+    margin: auto;
+    margin-top: 10px;
+    min-height: 350px;
+    min-width: 250px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .form-container:hover{
+    box-shadow: 1px 8px 16px 1px rgba(0,0,0,0.45);
+    transition: .3s;
+  }
+  #task_no_text{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    border-radius: 6px 6px 0 0;
+    background-color: rgb(240, 0, 0);
+  }
+  .secondweek-1-output-container{
+    background-color: white;
+    max-width: 50%;
+    border-radius: 6px;
+    margin: auto;
+    margin-top: 10px;
+    min-height: 350px;
+    min-width: 250px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .rowForm{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    
+  }
+  .rowForm input[type=text],input[type=number],input[type=month]{
+    border-radius: 4px;
+    border: 2px solid #3b3b3b7c;
+    padding: 6px 10px;
+  
+  }
+  .rowForm label{
+    font-family: sans-serif;
+    margin: 4px 0;
+  }
+  .textField{
+    color: black;
+    font-size: 25px;
+    text-align: center;
+  }
+  .select-option{
+    display: block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: rgb(156, 156, 156);
+
+  }
+  .submit-btn{
+    border-radius: 4px;
+    background-color: rgb(255, 24, 16);
+    padding: 8px 12px;
+    min-width: 130px;
+    bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    color: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid rgb(48, 48, 48);
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px ;
+  }
+  
+  @media (max-width: 768px) {
+    .rowForm input{
+      margin: 10px 0;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .rowForm label{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .rowForm select{
+      margin: 10px 0;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+    .rowForm {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+/* End of the ThirdWeek Page Styling*/
