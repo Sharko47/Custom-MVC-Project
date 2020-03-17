@@ -27,10 +27,10 @@
     <div class="menu-toggle"></div>
 <nav>
     <ul>
-    <li><a class="<?php echo $currentPage == 'index'?'active': '' ?>" href="index.php">Home</a></li>
-    <li><a class="<?php echo $currentPage == 'firstweek'?'active': '' ?>" href="firstweek.php">First Week</a></li>
-    <li><a class="<?php echo $currentPage == 'secondweek'?'active': '' ?>" href="secondweek.php">Second Week</a></li>
-    <li><a class="<?php echo $currentPage == 'thirdweek'?'active': '' ?>" href="thirdweek.php">Third Week</a></li>
+    <li><a class="<?php echo $currentPage == 'index'?'active': '' ?>" href="/">Home</a></li>
+    <li><a class="<?php echo $currentPage == 'firstweek'?'active': '' ?>" href="/firstweek">First Week</a></li>
+    <li><a class="<?php echo $currentPage == 'secondweek'?'active': '' ?>" href="/secondweek">Second Week</a></li>
+    <li><a class="<?php echo $currentPage == 'thirdweek'?'active': '' ?>" href="/thirdweek">Third Week</a></li>
     </ul>
 </nav>
 <div class="clear-fix"></div>

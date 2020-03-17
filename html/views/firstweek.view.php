@@ -1,6 +1,6 @@
 <?php
 $currentPage = 'firstweek';
-include ('nav_header.php');
+require ('partials/nav_header.php');
 ?>
 <div class="task_1_container">
     <h2>Task No 1</h2>
@@ -293,4 +293,4 @@ include ('nav_header.php');
     ?>
 </div>
 </div>
-<?php include ('footer.php')?>
+<?php require ('partials/footer.php')?>

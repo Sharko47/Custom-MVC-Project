@@ -1,8 +1,11 @@
-<?php 
-$currentPage = 'index';
-include ('nav_header.php'); 
-?>
+<?php
 
-<h1>Welcome To Hestabit Technologies</h1>
+$database = require 'core/bootstrap.php';
 
-<?php include ('footer.php'); ?>
+$uri = trim($_SERVER['REQUEST_URI'], '/');
+
+$route = Router::load('routes.php');
+
+$route->direct($uri);
+
+
